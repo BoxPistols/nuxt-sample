@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Title</h1>
+    <h1>Hello My Nuxt.js</h1>
     <nuxt />
   </div>
 </template>
@@ -25,6 +25,10 @@ html {
   margin: 0;
 }
 
+h1{
+  font-size: 18px;
+  color: green;
+}
 .button--green {
   display: inline-block;
   border-radius: 4px;
