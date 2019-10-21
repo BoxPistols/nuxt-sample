@@ -1,28 +1,38 @@
-<template name="component-name">
-  <div>
-    <el-row type="flex" justify="center">
-      <el-col :span="12">
-        <input placeholder="input" @keyup.enter="addTodo">
-      </el-col>
-    </el-row>
-  </div>
+<template>
+  <ul>
+    <li v-for="(todo, i) in todos" :key="i">
+      <input type="checkbox" :checked="todo.done" @change="toggle(todo)" />
+      <span :class="{ done: todo.done }">{{ todo.text }}</span>
+    </li>
+    <li>
+      <input placeholder="What needs to be done?" @keyup.enter="addTodo" />
+    </li>
+  </ul>
 </template>
 
 <script>
 import { mapMutations } from 'vuex'
 
 export default {
-  methods: {
-    addTodo(e) {
-      this.$store.commit('todos/add', e.target.value)
+  computed: {
+    todos() {
+      return this.$store.state.todos.list
     }
   },
-};
+  methods: {
+    addTodo(e) {
+      this.$store.commit('add', e.target.value)
+      e.target.value = ''
+    },
+    ...mapMutations({
+      toggle: 'toggle'
+    })
+  }
+}
 </script>
 
-
 <style>
-input{
-  font-size: 24px
+.done {
+  text-decoration: line-through;
 }
 </style>
