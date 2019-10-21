@@ -23,6 +23,10 @@
         >
           GitHub
         </a>
+
+        <li><a href="/nakajmg">ダイレクトリンク</a></li>
+        <li><nuxt-link to="/nakajmg">ルーターリンク</nuxt-link></li>
+
       </div>
     </div>
   </div>
