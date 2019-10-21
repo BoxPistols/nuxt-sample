@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Title</h1>
+    <h1>Global Parts</h1>
     <nuxt />
   </div>
 </template>
@@ -25,6 +25,13 @@ html {
   margin: 0;
 }
 
+h1{
+  font-size: 18px;
+  color: lightgreen;
+  /* background-color: #24292e; */
+  text-align: center;
+  padding: 20px;
+}
 .button--green {
   display: inline-block;
   border-radius: 4px;
